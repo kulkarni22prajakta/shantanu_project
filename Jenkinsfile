@@ -12,7 +12,7 @@ label {
 		stage ('CLEAN_OLD_M2') {
 			
 			steps {
-				sh "rm -rf /home/saccount/.m2/repository"
+				sh "rm -rf /home/prajakta/.m2/repository"
 				
 			}
 			
@@ -22,7 +22,7 @@ label {
 		
 			steps {
 						
-						sh "mvn clean package"
+						sh "mvn clean install -DinstallskipTetsts=true"
 			
 			}
 			
@@ -33,7 +33,7 @@ label {
 		
 				steps {
 						
-						sh "scp -r target/LoginWebApp.war saccount@10.0.2.51:/data/project/wars"
+						sh "cp -r target/LoginWebApp.war /mnt/apache-tomcat-9.0.78/webapps"
 
 						}
 				
