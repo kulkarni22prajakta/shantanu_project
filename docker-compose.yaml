@@ -1,0 +1,25 @@
+version: '3'
+services:
+  
+  my-tomcat:
+    image: 'tomcat:9'
+    ports:
+    - '8080-8085:8080'
+    volumes:
+    - '/mnt/my_tomcat:/usr/local/tomcat/webapps'
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin12345
+    ports:
+      - "3306:3306"
+    volumes:
+      - /mnt/my_mysql:/var/lib/mysql
+
+volumes:
+  mysql_data:
