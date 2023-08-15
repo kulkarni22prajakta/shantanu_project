@@ -29,11 +29,11 @@ label {
 		
 		}
 		
-		stage ('COPY_WAR_TO_Server'){
+		stage ('deploy on docker container'){
 		
 				steps {
 						
-						sh "cp -r target/LoginWebApp.war /mnt/apache-tomcat-9.0.78/webapps"
+						sh "docker-compose up"
 
 						}
 				
