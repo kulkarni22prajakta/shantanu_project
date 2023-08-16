@@ -4,7 +4,7 @@ services:
   my-tomcat:
     image: 'tomcat:9'
     ports:
-    - '8080-8085:8080'
+    - '8081-8085:8080'
     volumes:
     - '/mnt/my_tomcat:/usr/local/tomcat/webapps'
 
