@@ -34,9 +34,9 @@ label {
 				steps {
 						
 						sh "docker-compose up"
-						sh "docker-compose exec mysql_container_name create database test;"
-						sh "docker-compose exec mysql_container_name use test;"
-						sh "docker-compose exec mysql_container_name CREATE TABLE `USER` (
+						sh "docker-compose exec -itd mysql_container create database test;"
+						sh "docker-compose exec -itd mysql_container use test;"
+						sh "docker-compose exec -itd mysql_container CREATE TABLE `USER` (
   						`id` int(10) unsigned NOT NULL auto_increment,
  						 `first_name` varchar(45) NOT NULL,
 						  `last_name` varchar(45) NOT NULL,
